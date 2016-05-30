@@ -9,7 +9,6 @@
 1. [Description](#description)
 1. [Setup - The basics of getting started with rear](#setup)
     * [What rear affects](#what-rear-affects)
-    * [Setup requirements](#setup-requirements)
     * [Beginning with rear](#beginning-with-rear)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
@@ -18,70 +17,83 @@
 
 ## Description
 
-Start with a one- or two-sentence summary of what the module does and/or what
-problem it solves. This is your 30-second elevator pitch for your module.
-Consider including OS/Puppet version it works with.
-
-You can give more descriptive information in a second paragraph. This paragraph
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?" If your module has a range of functionality (installation, configuration,
-management, etc.), this is the time to mention it.
+The rear module install and configures the Relax and Recovery suite that provide
+an easy to use script to create backup and recovery images.
 
 ## Setup
 
-### What rear affects **OPTIONAL**
+### What rear affects
 
-If it's obvious what your module touches, you can skip this section. For
-example, folks can probably figure out that your mysql_instance module affects
-their MySQL instances.
-
-If there's more that they should know about, though, this is the place to mention:
-
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you might want to include an additional "Upgrading" section
-here.
+* Install rear package
+* Setup basic rear cron job
 
 ### Beginning with rear
 
-The very basic steps needed for a user to get the module up and running. This
-can include setup steps, if necessary, or it can be an example of the most
-basic use of the module.
+```puppet
+class { 'rear':
+  output_url => 'nfs://192.168.100.1/backup/rear',
+  backup_url => 'nfs://192.168.100.1/backup/rear'
+}
+```
 
 ## Usage
 
-This section is where you describe how to customize, configure, and do the
-fancy stuff with your module here. It's especially helpful if you include usage
-examples and code samples for doing things with your module.
+```puppet
+class { 'rear':
+  output_url => 'nfs://192.168.100.1/backup/rear',
+  backup_url => 'nfs://192.168.100.1/backup/rear'
+  backup_schedule => 'weekly'
+  ssh_root_password => 'HyperSecret01x!'
+}
+```
 
 ## Reference
 
-Here, include a complete list of your module's classes, types, providers,
-facts, along with the parameters for each. Users refer to this section (thus
-the name "Reference") to find specific details; most users don't read it per
-se.
+Here is the list of parameters used by this module.
+
+### `$output`
+
+Backup method that is used
+Default value is ISO
+
+### `$output_url`
+
+Backup target that is used for backup method
+Default value is 'nfs://192.168.0.1/srv/rear'
+
+### `$backup`
+
+Backup method that is used
+Default value is NETFS
+
+### `$backup_url`
+
+Backup target that is used for backup method
+Default value is 'nfs://192.168.0.1/srv/rear'
+
+### `$backup_schedule`
+
+Backup frequency (daily, weekly or monthly)
+Default value is none
+
+### `$ssh_root_password`
+
+Password that could be used to log into the recover live image as root
+Default value is 'Recover!N0W'
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc. If there
-are Known Issues, you might want to include them under their own heading here.
+This module has been built on and tested against Puppet 4.0 and higher.
+
+The module has been tested on:
+
+* RedHat Enterprise Linux 6/7
+* Scientific Linux 6/7
+* CentOS Linux 6/7
+
+Testing on other platforms has been light and cannot be guaranteed.
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc. **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You can also add any additional sections you feel
-are necessary or important to include here. Please use the `## ` header.
+If you like to add or improve this module, feel free to fork the module and send
+me a merge request with the modification.
