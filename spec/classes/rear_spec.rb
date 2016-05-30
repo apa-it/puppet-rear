@@ -44,9 +44,18 @@ describe 'rear', :type => :class do
 
       it { is_expected.to contain_file('/etc/cron.d/rear').with_ensure('file') }
 
-      it 'should generate valid content for local.config' do
+      it 'should generate valid content for configuration file local.config' do
         content = catalogue.resource('file', '/etc/rear/local.conf').send(:parameters)[:content]
-        expect(content).to match('Recover!1234')
+        expect(content).to match('OUTPUT=ISO')
+        expect(content).to match('OUTPUT_URL=nfs://192.168.1.20/srv/rear/domain')
+        expect(content).to match('BACKUP=NETFS')
+        expect(content).to match('BACKUP_URL=nfs://192.168.1.20/srv/rear/domain')
+        expect(content).to match('SSH_ROOT_PASSWORD=Recover!1234')
+      end
+
+      it 'should generate valid content for cron file rear' do
+        content = catalogue.resource('file', '/etc/cron.d/rear').send(:parameters)[:content]
+        expect(content).to match('0 2 \* \* 0 root /usr/sbin/rear mkbackup')
       end
 
       case facts[:operatingsystem]
