@@ -13,7 +13,7 @@
 class rear::config {
 
   # Setup configuration files
-  file { "$rear::params::config_local":
+  file { $rear::params::config_local:
     ensure  => file,
     mode    => '0644',
     owner   => root,
