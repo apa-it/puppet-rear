@@ -37,7 +37,7 @@ class { 'rear':
 }
 ```
 
-### ReaR with backup schedule and SSH passord
+### ReaR with backup schedule and SSH password
 
 ```puppet
 class { 'rear':
