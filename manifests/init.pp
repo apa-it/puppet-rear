@@ -66,6 +66,24 @@ class rear (
   $ssh_root_password = $rear::params::ssh_root_password
 ) inherits rear::params {
 
+  # Validate parameters
+  validate_string($rear::output)
+  validate_string($rear::output_url)
+  validate_string($rear::backup)
+  validate_string($rear::backup_url)
+  validate_string($rear::backup_schedule)
+  validate_string($rear::ssh_root_password)
+
+  if $backup_schedule != none {
+    if $backup_schedule != daily {
+      if $backup_schedule != weekly {
+        if $backup_schedule != monthly {
+          warning('Not supported backup schedule, switch back to none!')
+        }
+      }
+    }
+  }
+
   # Start workflow
   if $rear::params::linux {
     # Containment

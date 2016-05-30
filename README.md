@@ -9,7 +9,6 @@
 1. [Description](#description)
 1. [Setup - The basics of getting started with rear](#setup)
     * [What rear affects](#what-rear-affects)
-    * [Beginning with rear](#beginning-with-rear)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 1. [Limitations - OS compatibility, etc.](#limitations)
@@ -27,7 +26,9 @@ an easy to use script to create backup and recovery images.
 * Install rear package
 * Setup basic rear cron job
 
-### Beginning with rear
+## Usage
+
+### ReaR minimal
 
 ```puppet
 class { 'rear':
@@ -36,7 +37,7 @@ class { 'rear':
 }
 ```
 
-## Usage
+### ReaR with backup schedule and SSH passord
 
 ```puppet
 class { 'rear':
