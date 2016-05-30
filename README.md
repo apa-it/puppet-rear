@@ -1,5 +1,9 @@
 # rear
 
+[![Build Status](https://travis-ci.org/thbe/puppet-rear.png?branch=master)](https://travis-ci.org/thbe/puppet-rear)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/thbe/rear.svg)](https://forge.puppetlabs.com/thbe/rear)
+[![Coverage Status](https://coveralls.io/repos/thbe/puppet-rear/badge.svg?branch=master&service=github)](https://coveralls.io/github/thbe/puppet-rear?branch=master)
+
 #### Table of Contents
 
 1. [Description](#description)
