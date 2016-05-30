@@ -29,7 +29,7 @@
 #   Default value is 'Recover!N0W'
 
 # * `schedule`
-#   Backup frequency
+#   Backup frequency (daily, weekly or monthly)
 #   Default value is none
 #
 # Variables

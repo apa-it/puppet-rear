@@ -14,11 +14,11 @@ class rear::config {
 
   # Setup configuration files
   file { "${rear::params::config_local}":
-      ensure  => present,
-      mode    => '0644',
-      owner   => root,
-      group   => root,
-      path    => $rear::params::config_local,
-      content => template($rear::params::config_local_template);
+    ensure  => file,
+    mode    => '0644',
+    owner   => root,
+    group   => root,
+    path    => $rear::params::config_local,
+    content => template($rear::params::config_local_template);
   }
 }

@@ -14,27 +14,29 @@ class rear::params {
   # Operating system specific definitions
   case $::osfamily {
     'RedHat' : {
-      $linux                 = true
+      $linux                       = true
 
       # Package definition
-      $package_common        = 'rear'
+      $package_common              = 'rear'
 
       # Config definition
-      $config_local          = '/etc/rear/local.conf'
-      $config_local_template = 'rear/etc/local.conf.erb'
+      $config_local                = '/etc/rear/local.conf'
+      $config_local_template       = 'rear/etc/local.conf.erb'
 
       # Service definition
+      $service_cron_file           = '/etc/cron.d/rear'
+      $service_cron_file_template  = 'rear/etc/rear.erb'
     }
     default  : {
-      $linux                 = false
+      $linux                       = false
     }
   }
 
   # rear definitions
-  $output            = 'ISO'
-  $output_url        = 'nfs://192.168.0.1/srv/rear'
-  $backup            = 'NETFS'
-  $backup_url        = 'nfs://192.168.0.1/srv/rear'
-  $ssh_root_password = 'Recover!N0W'
-  $schedule          = 'none'
+  $output             = 'ISO'
+  $output_url         = 'nfs://192.168.0.1/srv/rear'
+  $backup             = 'NETFS'
+  $backup_url         = 'nfs://192.168.0.1/srv/rear'
+  $ssh_root_password  = 'Recover!N0W'
+  $schedule           = 'none'
 }

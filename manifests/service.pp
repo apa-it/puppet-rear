@@ -12,4 +12,13 @@
 #
 class rear::service {
 
+  # Setup crontab configuration files
+  file { "${rear::params::service_cron_file}":
+    ensure  => file,
+    mode    => '0644',
+    owner   => root,
+    group   => root,
+    path    => $rear::params::service_cron_file,
+    content => template($rear::params::service_cron_file_template);
+  }
 }

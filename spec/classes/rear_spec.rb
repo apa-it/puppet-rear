@@ -42,6 +42,8 @@ describe 'rear', :type => :class do
 
       it { is_expected.to contain_file('/etc/rear/local.conf').with_ensure('file') }
 
+      it { is_expected.to contain_file('/etc/cron.d/rear').with_ensure('file') }
+
       it 'should generate valid content for local.config' do
         content = catalogue.resource('file', '/etc/rear/local.conf').send(:parameters)[:content]
         expect(content).to match('Recover!1234')
