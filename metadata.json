@@ -1,0 +1,19 @@
+{
+  "name": "thbe-rear",
+  "version": "0.1.0",
+  "author": "thbe",
+  "summary": "Relax and Recover (rear) module",
+  "license": "GPL-3.0",
+  "source": "https://github.com/thbe/puppet-rear.git",
+  "project_page": "https://github.com/thbe/puppet-rear",
+  "issues_url": "https://github.com/thbe/puppet-rear/issues",
+  "operatingsystem_support": [
+    { "operatingsystem": "RedHat", "operatingsystemrelease": [ "5.0", "6.0", "7.0" ] },
+    { "operatingsystem": "OracleLinux", "operatingsystemrelease": [ "5.0", "6.0", "7.0" ] },
+    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "5.0", "6.0", "7.0" ] }
+  ],
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}

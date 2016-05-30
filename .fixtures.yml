@@ -1,0 +1,7 @@
+fixtures:
+  forge_modules:
+    stdlib: "puppetlabs/stdlib"
+    concat: "puppetlabs/concat"
+    staging: "nanliu/staging"
+  symlinks:
+    rear: "#{source_dir}"
