@@ -24,13 +24,13 @@
 #   Backup target that is used for backup method
 #   Default value is 'nfs://192.168.0.1/srv/rear'
 #
+# * `backup_schedule`
+#   Backup frequency (daily, weekly or monthly)
+#   Default value is none
+#
 # * `ssh_root_password`
 #   Password that could be used to log into the recover live image as root
 #   Default value is 'Recover!N0W'
-
-# * `schedule`
-#   Backup frequency (daily, weekly or monthly)
-#   Default value is none
 #
 # Variables
 # ----------
@@ -44,7 +44,7 @@
 #    class { 'rear':
 #      output_url => 'nfs://192.168.100.1/backup/rear',
 #      backup_url => 'nfs://192.168.100.1/backup/rear',
-#      schedule => 'weekly'
+#      backup_schedule => 'weekly'
 #    }
 #
 # Authors
@@ -62,8 +62,8 @@ class rear (
   $output_url        = $rear::params::output_url,
   $backup            = $rear::params::backup,
   $backup_url        = $rear::params::backup_url,
-  $ssh_root_password = $rear::params::ssh_root_password,
-  $schedule          = $rear::params::schedule
+  $backup_schedule   = $rear::params::backup_schedule,
+  $ssh_root_password = $rear::params::ssh_root_password
 ) inherits rear::params {
 
   # Start workflow

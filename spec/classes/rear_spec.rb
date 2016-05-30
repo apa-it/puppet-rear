@@ -25,8 +25,8 @@ describe 'rear', :type => :class do
         {
           :output_url => 'nfs://192.168.1.20/srv/rear/domain',
           :backup_url => 'nfs://192.168.1.20/srv/rear/domain',
-          :ssh_root_password => 'Recover!1234',
-          :schedule => 'weekly'
+          :backup_schedule => 'weekly',
+          :ssh_root_password => 'Recover!1234'
         }
       }
 

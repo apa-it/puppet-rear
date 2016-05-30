@@ -2,12 +2,12 @@
 30 1 * * * root /usr/sbin/rear checklayout || /usr/sbin/rear mkrescue
 
 # Rear backup crontab entry
-<%- if scope.lookupvar("rear::schedule") == "daily" -%>
+<%- if scope.lookupvar("rear::backup_schedule") == "daily" -%>
 0 2 * * * root /usr/sbin/rear mkbackup
 <%- end -%>
-<%- if scope.lookupvar("rear::schedule") == "weekly" -%>
+<%- if scope.lookupvar("rear::backup_schedule") == "weekly" -%>
 0 2 * * 0 root /usr/sbin/rear mkbackup
 <%- end -%>
-<%- if scope.lookupvar("rear::schedule") == "monthly" -%>
+<%- if scope.lookupvar("rear::backup_schedule") == "monthly" -%>
 0 2 1-7 * 0 root /usr/sbin/rear mkbackup
 <%- end -%>
