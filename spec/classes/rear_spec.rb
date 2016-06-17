@@ -26,7 +26,7 @@ describe 'rear', :type => :class do
       case facts[:osfamily]
       when 'RedHat'
         it { is_expected.to contain_class('rear::params') }
-        it { is_expected.to contain_class('rear::package') }
+        it { is_expected.to contain_class('rear::install') }
         it { is_expected.to contain_class('rear::config') }
         it { is_expected.to contain_class('rear::service') }
 

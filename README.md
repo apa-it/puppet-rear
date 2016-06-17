@@ -16,8 +16,8 @@
 
 ## Description
 
-The rear module install and configures the Relax and Recovery suite that provide
-an easy to use script to create backup and recovery images.
+The rear module install and configures the Relax and Recovery suite (http://relax-and-recover.org)
+that provides an easy to use script to create backup and recovery images.
 
 ## Setup
 

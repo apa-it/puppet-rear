@@ -86,15 +86,10 @@ class rear (
 
   # Start workflow
   if $rear::params::linux {
-    # Containment
-    contain rear::package
-    contain rear::config
-    contain rear::service
-
-    # Include classes
-    Class['rear::package'] ->
-    Class['rear::config'] ->
-    Class['rear::service']
+    class{'rear::install': } ->
+    class{'rear::config': } ~>
+    class{'rear::service': } ->
+    Class['rear']
   }
   else {
     warning('The current operating system is not supported!')

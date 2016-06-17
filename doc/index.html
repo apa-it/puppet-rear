@@ -95,7 +95,6 @@
 
 <ul>
 <li><a href="#what-rear-affects">What rear affects</a></li>
-<li><a href="#beginning-with-rear">Beginning with rear</a></li>
 </ul></li>
 <li><a href="#usage">Usage - Configuration options and additional functionality</a></li>
 <li><a href="#reference">Reference - An under-the-hood peek at what the module is doing and how</a></li>
@@ -105,8 +104,8 @@
 
 <h2>Description</h2>
 
-<p>The rear module install and configures the Relax and Recovery suite that provide
-an easy to use script to create backup and recovery images.</p>
+<p>The rear module install and configures the Relax and Recovery suite (<a href="http://relax-and-recover.org">http://relax-and-recover.org</a>)
+that provides an easy to use script to create backup and recovery images.</p>
 
 <h2>Setup</h2>
 
@@ -117,7 +116,9 @@ an easy to use script to create backup and recovery images.</p>
 <li>Setup basic rear cron job</li>
 </ul>
 
-<h3>Beginning with rear</h3>
+<h2>Usage</h2>
+
+<h3>ReaR minimal</h3>
 
 <pre class="code puppet"><code class="puppet">class { &#39;rear&#39;:
   output_url =&gt; &#39;nfs://192.168.100.1/backup/rear&#39;,
@@ -125,7 +126,7 @@ an easy to use script to create backup and recovery images.</p>
 }
 </code></pre>
 
-<h2>Usage</h2>
+<h3>ReaR with backup schedule and SSH password</h3>
 
 <pre class="code puppet"><code class="puppet">class { &#39;rear&#39;:
   output_url =&gt; &#39;nfs://192.168.100.1/backup/rear&#39;,
@@ -190,7 +191,7 @@ me a merge request with the modification.</p>
 </div></div>
 
     <div id="footer">
-  Generated on Mon May 30 16:16:38 2016 by
+  Generated on Fri Jun 17 13:33:56 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.3.0).
 </div>

@@ -1,4 +1,7 @@
 0.1.2 2016-05-30 thbe <project@bendler-net.de>
+ * Changed module structure
+
+0.1.2 2016-05-30 thbe <project@bendler-net.de>
  * Fix stdlib dependency
  * Remove 5.x support
  * Fix spelling in README.md

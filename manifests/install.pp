@@ -1,6 +1,6 @@
-# Class: rear::package
+# Class: rear::install
 #
-# This module manages rear packages
+# This module install rear packages
 #
 # Parameters:   This module has no parameters
 #
@@ -10,6 +10,6 @@
 #
 # Sample Usage: include rear::package
 #
-class rear::package {
+class rear::install {
   package { $rear::params::package_common: ensure => installed; }
 }
