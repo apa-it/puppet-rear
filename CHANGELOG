@@ -1,3 +1,6 @@
+0.2.0 2016-08-08 thbe <project@bendler-net.de>
+ * Add url_with_domain switch
+
 0.1.2 2016-05-30 thbe <project@bendler-net.de>
  * Changed module structure
 

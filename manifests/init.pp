@@ -32,6 +32,10 @@
 #   Password that could be used to log into the recover live image as root
 #   Default value is 'Recover!N0W'
 #
+# * `url_with_domain`
+#   Rear use only hostname for backup directory, if set to true it will use the domain name as well
+#   Default value is false
+#
 # Variables
 # ----------
 #
@@ -63,7 +67,8 @@ class rear (
   $backup            = $rear::params::backup,
   $backup_url        = $rear::params::backup_url,
   $backup_schedule   = $rear::params::backup_schedule,
-  $ssh_root_password = $rear::params::ssh_root_password
+  $ssh_root_password = $rear::params::ssh_root_password,
+  $url_with_domain   = $rear::params::url_with_domain
 ) inherits rear::params {
 
   # Validate parameters

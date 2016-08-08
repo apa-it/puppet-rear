@@ -14,8 +14,8 @@ describe 'rear', :type => :class do
 
       let(:params) {
         {
-          :output_url => 'nfs://192.168.1.20/srv/rear/domain',
-          :backup_url => 'nfs://192.168.1.20/srv/rear/domain',
+          :output_url => 'nfs://192.168.1.20/srv/rear',
+          :backup_url => 'nfs://192.168.1.20/srv/rear',
           :backup_schedule => 'weekly',
           :ssh_root_password => 'Recover!1234'
         }
@@ -39,9 +39,9 @@ describe 'rear', :type => :class do
         it 'should generate valid content for configuration file local.config' do
           content = catalogue.resource('file', '/etc/rear/local.conf').send(:parameters)[:content]
           expect(content).to match('OUTPUT=ISO')
-          expect(content).to match('OUTPUT_URL=nfs://192.168.1.20/srv/rear/domain')
+          expect(content).to match('OUTPUT_URL=nfs://192.168.1.20/srv/rear')
           expect(content).to match('BACKUP=NETFS')
-          expect(content).to match('BACKUP_URL=nfs://192.168.1.20/srv/rear/domain')
+          expect(content).to match('BACKUP_URL=nfs://192.168.1.20/srv/rear')
           expect(content).to match('SSH_ROOT_PASSWORD=Recover!1234')
         end
 

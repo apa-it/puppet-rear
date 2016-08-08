@@ -12,6 +12,15 @@
 #
 class rear::config {
 
+  # Check if url_with_domain is used
+  if $rear::url_with_domain {
+    $local_backup_url = "${rear::backup_url}/${::domain}"
+    $local_output_url = "${rear::output_url}/${::domain}"
+  } else {
+    $local_backup_url = $rear::backup_url
+    $local_output_url = $rear::output_url
+  }
+
   # Setup configuration files
   file { $rear::params::config_local:
     ensure  => file,

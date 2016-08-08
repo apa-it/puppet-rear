@@ -39,4 +39,5 @@ class rear::params {
   $backup_url         = 'nfs://192.168.0.1/srv/rear'
   $backup_schedule    = 'none'
   $ssh_root_password  = 'Recover!N0W'
+  $url_with_domain    = false
 }
