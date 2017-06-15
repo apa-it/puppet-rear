@@ -83,6 +83,7 @@ class rear (
     if $backup_schedule != daily {
       if $backup_schedule != weekly {
         if $backup_schedule != monthly {
+          $backup_schedule = $rear::params::backup_schedule
           warning('Not supported backup schedule, switch back to none!')
         }
       }
