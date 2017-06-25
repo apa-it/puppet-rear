@@ -1,25 +1,12 @@
 require 'spec_helper'
 
 describe 'rear', :type => :class do
-
-  context 'with defaults for all parameters' do
-    it { should contain_class('rear') }
-  end
-
   on_supported_os.each do |os, facts|
     context "on #{os}" do
       let(:facts) do
         facts
       end
-
-      let(:params) {
-        {
-          :output_url => 'nfs://192.168.1.20/srv/rear',
-          :backup_url => 'nfs://192.168.1.20/srv/rear',
-          :backup_schedule => 'weekly',
-          :ssh_root_password => 'Recover!1234'
-        }
-      }
+      let(:params) { { output_url: 'nfs://192.168.1.20/srv/rear', backup_url: 'nfs://192.168.1.20/srv/rear', backup_schedule: 'weekly', ssh_root_password: 'Recover!1234' } }
 
       it { is_expected.to compile.with_all_deps }
 

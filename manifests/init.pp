@@ -72,6 +72,7 @@ class rear (
 ) inherits rear::params {
 
   # Validate parameters
+  include ::stdlib
   validate_string($rear::output)
   validate_string($rear::output_url)
   validate_string($rear::backup)
@@ -92,10 +93,10 @@ class rear (
 
   # Start workflow
   if $rear::params::linux {
-    class{'rear::install': } ->
-    class{'rear::config': } ~>
-    class{'rear::service': } ->
-    Class['rear']
+    class{'::rear::install': }
+    -> class{'::rear::config': }
+    ~> class{'::rear::service': }
+    -> Class['rear']
   }
   else {
     warning('The current operating system is not supported!')
