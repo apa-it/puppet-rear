@@ -1,6 +1,5 @@
 fixtures:
+  repositories:
+    stdlib: "git://github.com/puppetlabs/puppetlabs-stdlib.git"
   symlinks:
     rear: "#{source_dir}"
-  repositories:
-  forge_modules:
-    stdlib: "puppetlabs-stdlib"

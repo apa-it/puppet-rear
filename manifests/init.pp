@@ -72,7 +72,6 @@ class rear (
 ) inherits rear::params {
 
   # Validate parameters
-  include ::stdlib
   validate_string($rear::output)
   validate_string($rear::output_url)
   validate_string($rear::backup)

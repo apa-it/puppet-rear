@@ -7,6 +7,7 @@
 # environment (to compare the resulting system state to the desired state).
 #
 # Learn more about module testing here:
-# https://docs.puppetlabs.com/guides/tests_smoke.html
+# http://docs.puppetlabs.com/guides/tests_smoke.html
 #
-include ::rear
+include ::stdlib
+class { '::rear': }
