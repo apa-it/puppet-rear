@@ -27,6 +27,20 @@ class rear::params {
       $service_cron_file           = '/etc/cron.d/rear'
       $service_cron_file_template  = 'rear/etc/rear.erb'
     }
+    'Debian' : {
+      $linux                       = true
+
+      # Package definition
+      $package_common              = 'rear'
+
+      # Config definition
+      $config_local                = '/etc/rear/local.conf'
+      $config_local_template       = 'rear/etc/local.conf.erb'
+
+      # Service definition
+      $service_cron_file           = '/etc/cron.d/rear'
+      $service_cron_file_template  = 'rear/etc/rear.erb'
+    }
     default  : {
       $linux                       = false
     }
